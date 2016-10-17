@@ -135,12 +135,18 @@
       {
         dialog_id: [dialog_id],
         last_message: {
-          <формат объекта сообщения см. п. 1.1>
+            guid: [guid],
+            [sender: [sender]],
+            timestamp: [timestamp],
+            type: [type],
+            content: [content]
         }
       },
       ...<up to 24 more times>...
     ]
     ```
     
-    * *dialog_id*: идентификатор диалога (см. п. 1.2)
+    * *dialog_id*: идентификатор диалога (см. п. 1.2);
+    * формат объекта сообщения см. п. 1.1. Поле `sender` в нем содержится только если `dialog_id` обозначает конференцию
+
 
