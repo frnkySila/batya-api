@@ -166,7 +166,7 @@ dialog_id     :code:`conference_id | username`
             content: [content]
         }
       },
-      ...<up to 24 more times>...
+      ...
     ]
     
 ..
@@ -209,13 +209,112 @@ dialog_id     :code:`conference_id | username`
                     content: [content]
                 }
               },
-              ...<up to 24 more times>...
+              ...
             ]
     }
 
 ..
     
-    
+2.5. Получение сообщений из диалога, пришедших начиная с определенного момента
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+Приходят сообщения, время прихода которых больше или равно указанному.
+
+* **Method/URL:** :code:`GET /<auth_token>/messages/:dialog_id/after/:timestamp[/limit/:limit]`
+
+* **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *dialog_id*: идентификатор диалога (см. п. 1.2);
+  * *timestamp*: timestamp, начиная с которого (включительно) запрашиваются сообщения;
+  * *limit*: верхний предел количества присылаемых сообщений (по умолчанию 25)
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+  * **Content:**
+
+::
+
+    {
+        messages:
+            [
+              {
+                dialog_id: [dialog_id],
+                last_message: {
+                    guid: [guid],
+                    [sender: [sender]],
+                    timestamp: [timestamp],
+                    type: [type],
+                    content: [content]
+                }
+              },
+              ...
+            ]
+    }
+
+2.6. Получение сообщений из диалога, пришедших начиная с определенного момента (long polling)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Long-polling-версия предыдущего запроса. (Возможно, отдельная такая не нужна? Хз)
+
+* **Method/URL:** :code:`GET /<auth_token>/messages/:dialog_id/after/:timestamp/long`
+
+* **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *dialog_id*: идентификатор диалога (см. п. 1.2);
+  * *timestamp*: timestamp, начиная с которого (включительно) запрашиваются сообщения
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+  * **Content:**
+
+::
+
+    {
+        messages:
+            [
+              {
+                dialog_id: [dialog_id],
+                last_message: {
+                    guid: [guid],
+                    [sender: [sender]],
+                    timestamp: [timestamp],
+                    type: [type],
+                    content: [content]
+                }
+              },
+              ...
+            ]
+    }
+
+
+
+2.7. Отправка сообщения
+'''''''''''''''''''''''
+
+* **Method/URL:** :code:`POST /:auth_token/messages/send/:dialog_id`
+
+* **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *dialog_id*: идентификатор диалога (см. п. 1.2), в который предполгаается отправить сообщение
+
+* **POST Params:**
+
+  * *type*: тип сообщения (см. п. 1.1);
+  * *content*: содержимое сообщения (то же)
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+* **Error Response:**
+
+    TODO
 
 
