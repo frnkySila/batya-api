@@ -174,13 +174,13 @@ dialog_id     :code:`conference_id | username`
 
 Приходит запрошенное количество послених (хронологически) сообщений из выбранного диалога.
 
-* **Method/URL:** :code:`GET /:auth_token/messages/:dialog_id[/num_messages/:num_messages[/skip/:offset]]`
+* **Method/URL:** :code:`GET /:auth_token/messages/:dialog_id[/limit/:limit[/skip/:offset]]`
 
 * **URL Params:**
 
   * *auth_token*: аутентификационный токен пользователя (32 символа base64);
   * *dialog_id*: идентификатор диалога (см. п. 1.2);
-  * *num_messages*: количество запрашиваемых сообщений (по умолчанию 25);
+  * *limit*: количество запрашиваемых сообщений (по умолчанию 25);
   * *offset*: сколько сообщений пропустить, начиная с последнего (по умолчанию 0)
 
 * **Success Response:**
