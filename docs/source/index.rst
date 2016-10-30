@@ -86,6 +86,8 @@ dialog_id     :code:`conference_id | username`
 
 * **Data Params:**
 
+Длины логина и пароля варьируются в промежутке [6,25] знаков.
+
 ::
 
   {
