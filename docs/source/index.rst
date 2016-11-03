@@ -193,20 +193,21 @@ dialog_id     :code:`conference_id | username`
   **Content:**
 
 ::
-    { dialogs:
-        [
-          {
-            dialog_id: [dialog_id],
-            last_message: {
-                guid: [guid],
-                [sender: [sender]],
-                timestamp: [timestamp],
-                type: [type],
-                content: [content]
-            }
-          },
-          ...
-        ]
+    {
+        dialogs:
+            [
+              {
+                dialog_id: [dialog_id],
+                last_message: {
+                    guid: [guid],
+                    [sender: [sender],]
+                    timestamp: [timestamp],
+                    type: [type],
+                    content: [content]
+                }
+              },
+              ...
+            ]
     }
 ..
 
@@ -242,7 +243,7 @@ dialog_id     :code:`conference_id | username`
                 dialog_id: [dialog_id],
                 last_message: {
                     guid: [guid],
-                    [sender: [sender]],
+                    [sender: [sender],]
                     timestamp: [timestamp],
                     type: [type],
                     content: [content]
@@ -284,7 +285,7 @@ dialog_id     :code:`conference_id | username`
                 dialog_id: [dialog_id],
                 last_message: {
                     guid: [guid],
-                    [sender: [sender]],
+                    [sender: [sender],]
                     timestamp: [timestamp],
                     type: [type],
                     content: [content]
