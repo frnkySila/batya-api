@@ -15,7 +15,7 @@
     {
         guid: [guid],
         [dialog_id: [dialog_id],]
-        [sender: [sender]],
+        [sender: [sender],]
         timestamp: [timestamp],
         type: [type],
         content: [content]
