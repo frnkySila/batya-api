@@ -259,14 +259,15 @@ dialog_id     :code:`conference_id | username`
 
 Приходят сообщения, время прихода которых больше или равно указанному.
 
-* **Method/URL:** :code:`GET /<auth_token>/messages/:dialog_id/after/:timestamp[/limit/:limit]`
+* **Method/URL:** :code:`GET /<auth_token>/messages/:dialog_id/after/:timestamp[/limit/:limit][/long]`
 
 * **URL Params:**
 
   * *auth_token*: аутентификационный токен пользователя (32 символа base64);
   * *dialog_id*: идентификатор диалога (см. п. 1.2);
   * *timestamp*: timestamp, начиная с которого (включительно) запрашиваются сообщения;
-  * *limit*: верхний предел количества присылаемых сообщений (по умолчанию 25)
+  * *limit*: верхний предел количества присылаемых сообщений (по умолчанию 25);
+  * *long*: наличие ключа указывает, что клиент желает произвести long polling по данному запросу: если сообщений по запросу не существует, ответ не приходит, пока они не появятся на сервере
 
 * **Success Response:**
   
@@ -292,46 +293,6 @@ dialog_id     :code:`conference_id | username`
               ...
             ]
     }
-
-2.6. Получение сообщений из диалога, пришедших начиная с определенного момента (long polling)
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-Long-polling-версия предыдущего запроса. (Возможно, отдельная такая не нужна? Хз)
-
-* **Method/URL:** :code:`GET /<auth_token>/messages/:dialog_id/after/:timestamp/long`
-
-* **URL Params:**
-
-  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
-  * *dialog_id*: идентификатор диалога (см. п. 1.2);
-  * *timestamp*: timestamp, начиная с которого (включительно) запрашиваются сообщения
-
-* **Success Response:**
-  
-  * **Code:** :code:`200 Ok`
-
-  * **Content:**
-
-::
-
-    {
-        messages:
-            [
-              {
-                dialog_id: [dialog_id],
-                last_message: {
-                    guid: [guid],
-                    [sender: [sender]],
-                    timestamp: [timestamp],
-                    type: [type],
-                    content: [content]
-                }
-              },
-              ...
-            ]
-    }
-
-
 
 2.7. Отправка сообщения
 '''''''''''''''''''''''
