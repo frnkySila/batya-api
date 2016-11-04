@@ -13,11 +13,11 @@
 ::
 
     {
-        guid: [guid],
-        [sender: [sender],]
-        timestamp: [timestamp],
-        type: [type],
-        content: [content]
+        guid: <guid>,
+        [sender: <sender>,]
+        timestamp: <timestamp>,
+        type: <type>,
+        content: <content>
     }
 
 * *guid*: глобальный идентификатор сообщения. Применяется только для избежания дублей и пропусков в чате при повторном получении сообщения. Конкретное значение зависит от имплементации сервера, единственное требование — уникальность для каждого сообщения;
@@ -87,8 +87,8 @@ dialog_id     :code:`conference_id | username`
 ::
 
   {
-    username: [username],
-    password: [password]
+    username: <username>,
+    password: <password>
   }
 
 ..
@@ -125,8 +125,8 @@ dialog_id     :code:`conference_id | username`
 ::
 
   {
-    username: [username],
-    password: [password]
+    username: <username>,
+    password: <password>
   }
 
 * **Success Response:**
@@ -197,13 +197,13 @@ dialog_id     :code:`conference_id | username`
         dialogs:
             [
               {
-                dialog_id: [dialog_id],
+                dialog_id: <dialog_id>,
                 last_message: {
-                    guid: [guid],
-                    [sender: [sender],]
-                    timestamp: [timestamp],
-                    type: [type],
-                    content: [content]
+                    guid: <guid>,
+                    [sender: <sender>,]
+                    timestamp: <timestamp>,
+                    type: <type>,
+                    content: <content>
                 }
               },
               ...
@@ -240,13 +240,13 @@ dialog_id     :code:`conference_id | username`
         messages:
             [
               {
-                dialog_id: [dialog_id],
+                dialog_id: <dialog_id>,
                 last_message: {
-                    guid: [guid],
-                    [sender: [sender],]
-                    timestamp: [timestamp],
-                    type: [type],
-                    content: [content]
+                    guid: <guid>,
+                    [sender: <sender>,]
+                    timestamp: <timestamp>,
+                    type: <type>,
+                    content: <content>
                 }
               },
               ...
@@ -282,13 +282,13 @@ dialog_id     :code:`conference_id | username`
         messages:
             [
               {
-                dialog_id: [dialog_id],
+                dialog_id: <dialog_id>,
                 last_message: {
-                    guid: [guid],
-                    [sender: [sender],]
-                    timestamp: [timestamp],
-                    type: [type],
-                    content: [content]
+                    guid: <guid>,
+                    [sender: <sender>,]
+                    timestamp: <timestamp>,
+                    type: <type>,
+                    content: <content>
                 }
               },
               ...
