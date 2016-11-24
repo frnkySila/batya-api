@@ -242,14 +242,11 @@ dialog_id     :code:`conference_id | username`
         messages:
             [
               {
-                dialog_id: <dialog_id>,
-                last_message: {
-                    guid: <guid>,
-                    [sender: <sender>,]
-                    timestamp: <timestamp>,
-                    type: <type>,
-                    content: <content>
-                }
+                  guid: <guid>,
+                  sender: <sender>,
+                  timestamp: <timestamp>,
+                  type: <type>,
+                  content: <content>
               },
               ...
             ]
@@ -284,18 +281,17 @@ dialog_id     :code:`conference_id | username`
         messages:
             [
               {
-                dialog_id: <dialog_id>,
-                last_message: {
-                    guid: <guid>,
-                    [sender: <sender>,]
-                    timestamp: <timestamp>,
-                    type: <type>,
-                    content: <content>
-                }
+                  guid: <guid>,
+                  sender: <sender>,
+                  timestamp: <timestamp>,
+                  type: <type>,
+                  content: <content>
               },
               ...
             ]
     }
+
+..
 
 2.7. Отправка сообщения
 '''''''''''''''''''''''
