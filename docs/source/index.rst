@@ -314,7 +314,17 @@ dialog_id     :code:`conference_id | username`
 
 * **Error Response:**
 
-    TODO
+  * **Code:** :code:`403 Forbidden`
+
+  * **Content:**
+
+::
+
+  {
+      error: "Destination user does not exist"
+  }
+
+..
 
 2.8. Получение имени пользователя или названия диалога
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
