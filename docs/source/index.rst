@@ -378,3 +378,111 @@ dialog_id     :code:`conference_id | username`
   
   * **Code:** :code:`200 Ok`
 
+2.10. Создание конференции
+''''''''''''''''''''''''''
+
+* **Method/URL:** :code:`POST /:auth_token/conferences/create`
+
+* **POST Params:** *none*
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+  * **Content:**
+
+::
+
+  {
+      conference_id: <conference_id>
+  }
+
+..
+
+  * *conference_id*: идентификатор вновь созданной конференции
+
+2.11. Добавление пользователя в конференцию
+'''''''''''''''''''''''''''''''''''''''''''
+
+* **Method/URL:** :code:`POST /:auth_token/conferences/:conference_id/invite/:user_id`
+
+*  **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *conference_id*: идентификатор конференции, в которую нужно добавить пользователя;
+  * *user_id*: идентификатор пользователя, которого нужно добавить
+
+* **POST Params:** *none*
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+2.12. Удаление пользователя из конференции
+''''''''''''''''''''''''''''''''''''''''''
+
+* **Method/URL:** :code:`POST /:auth_token/conferences/:conference_id/kick/:user_id`
+
+*  **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *conference_id*: идентификатор конференции, из которой нужно удалить пользователя;
+  * *user_id*: идентификатор пользователя, которого нужно удалить
+
+* **POST Params:** *none*
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+2.13. Покидание конференции
+'''''''''''''''''''''''''''
+
+* **Method/URL:** :code:`POST /:auth_token/conferences/:conference_id/leave`
+
+*  **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *conference_id*: идентификатор конференции, которую нужно покинуть
+
+* **POST Params:** *none*
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+2.14. Получение списка участников коференции
+''''''''''''''''''''''''''''''''''''''''''''
+
+* **Method/URL:** :code:`GET /:auth_token/conferences/:conference_id/user_list`
+
+*  **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64);
+  * *conference_id*: идентификатор конференции, список участников которой предполагается получить
+
+* **POST Params:** *none*
+
+* **Success Response:**
+  
+  * **Code:** :code:`200 Ok`
+
+  * **Content:**
+
+::
+
+    {
+        users:
+            [
+              {
+                  user_id: <user_id>,
+                  join_time: <timestamp>
+              },
+              ...
+            ]
+    }
+
+..
+
+    * *user_id*: идентификатор соответствующего пользователя;
+    * *join_time*: время его добавления в конференцию
