@@ -312,6 +312,18 @@ dialog_id     :code:`conference_id | username`
   
   * **Code:** :code:`200 Ok`
 
+  * **Content:** 
+
+::
+
+  {
+      timestamp: <timestamp>
+  }
+
+..
+
+  * *timestamp*: серверное время прихода данного сообщения
+
 * **Error Response:**
 
   * **Code:** :code:`403 Forbidden`
