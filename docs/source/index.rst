@@ -519,11 +519,12 @@ dialog_id     :code:`conference_id | username`
 ::
 
     {
+        "originator": <originator_id>,
         "users":
             [
               {
                   "user_id": <user_id>,
-                  join_time: <timestamp>
+                  "join_time": <timestamp>
               },
               ...
             ]
@@ -531,7 +532,8 @@ dialog_id     :code:`conference_id | username`
 
 ..
 
-    * *user_id*: идентификатор соответствующего пользователя;
+    * *originator_id*: идентификатор создателя конференции;
+    * *user_id*: идентификатор соответствующего участника;
     * *join_time*: время его добавления в конференцию
 
 2.15. Поиск по именам и идентификаторам пользователей
