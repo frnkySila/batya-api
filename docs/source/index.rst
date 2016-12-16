@@ -624,3 +624,32 @@ dialog_id     :code:`conference_id | username`
   * **Content:** *хз*
 
 *TODO: переделать этот метод и предыдущий для возможности использовать CDN*
+
+2.18. Смена пароля
+~~~~~~~~~~~~~~~~~~
+
+* **Method/URL:** :code:`POST /:auth_token`
+
+*  **URL Params:**
+
+  * *auth_token*: аутентификационный токен пользователя (32 символа base64)
+
+* **Data Params:**
+
+::
+
+  {
+    "password": "<password>",
+    "new_password": "<new_password>"
+  }
+
+..
+
+    * *password️*: plain text password
+    * *password️*: plain text new password
+
+* **Success Response:**
+
+      **Code:** :code:`200 Ok`
+
+      **Content:** *none*
