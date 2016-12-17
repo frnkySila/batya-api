@@ -646,7 +646,7 @@ dialog_id     :code:`conference_id | username`
 ..
 
     * *password️*: plain text password
-    * *password️*: plain text new password
+    * *new_password️*: plain text new password
 
 * **Success Response:**
 
